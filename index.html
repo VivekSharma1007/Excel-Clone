@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Excel</title>
+</head>
+
+<body>
+    <div class="file-action-cont">
+        <div class="page-action-prop">
+            <div class="file-menu">File</div>
+            <div class="home-menu">Home</div>
+            <div class="insert-menu">Insert</div>
+            <div class="layout-menu">Layout</div>
+            <div class="help-menu">Help</div>
+        </div>
+    </div>
+    <div class="cellprop-action-cont">
+        <div class="cell-action-icons">
+            <span class="material-icons">
+                content_copy
+            </span>
+            <span class="material-icons">
+                content_cut
+            </span>
+            <select class="font-style-select">
+                <option value="monospace">Monospace</option>
+                <option value="Arial">Arial</option>
+                <option value="sans-serif">sans-serif</option>
+                <option value="Times New Roman">Times New Roman</option>
+                </option>
+            </select>
+            <select class="font-size-select">
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+                </option>
+            </select>
+            <span class="material-icons">
+                format_bold
+            </span>
+            <span class="material-icons">
+                format_italic
+            </span>
+            <span class="material-icons">
+                format_underlined
+            </span>
+            <span class="material-icons">
+                format_align_left
+            </span>
+            <span class="material-icons">
+                format_align_center
+            </span>
+            <span class="material-icons">
+                format_align_right
+            </span>
+        </div>
+
+    </div>
+    <div class="formula-action-cont">
+        <input class="formula-address-bar" readonly></input>
+        <div class="formula-icon">
+            <span class="material-icons">
+                functions
+            </span>
+        </div>
+
+        <input class="formula-bar"></input>
+    </div>
+    <div class="grid-action-cont">
+       <div class="dummy-box"></div>
+       <div class="address-row-cont"></div>
+       <div class="cell-grid-cont">
+        <div class="address-col-cont"></div>
+       </div>
+       
+    </div>
+    <div class="sheet-action-cont">
+        <div class="sheet-add-icon">
+            <span class="material-icons">
+                post_add
+            </span>
+        </div>
+        <div class="sheet-folder-icon">
+            <div class="sheet-folder-count">Sheet</div>
+        </div>
+    </div>
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

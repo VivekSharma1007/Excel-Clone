@@ -1,0 +1,169 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.file-action-cont{
+    height: 3rem;
+    background-color: #747d8c;
+}
+.page-action-prop{
+    display: flex;
+    align-items: center;
+    align-items: flex-end;
+}
+.page-action-prop > *{
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+.cellprop-action-cont{
+    height: 3rem;
+    background-color: #dcdde1;
+}
+.cell-action-icons{
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem; 
+    /* display: flex;
+    justify-content:space-around; */
+  
+}
+.cell-action-icons > *{
+    margin-right: 1rem;
+    
+}
+.cell-action-icons > select{
+    /* margin-bottom: 5rem; */
+    margin-bottom: 5rem;
+    outline: none;
+}
+.formula-action-cont{
+    height: 3rem;
+    display: flex;
+    background-color: #dcdde1;
+}
+
+.formula-address-bar{
+    height: 50%;
+    width: 5rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    outline: none;
+    background-color: white;
+}
+
+.formula-icon{
+    margin: 0.5rem;
+}
+
+.formula-bar{
+    height: 50%;
+    margin: 0.5rem;
+    width: calc(100vw - 5rem - 2rem - 1rem);
+    background-color: white;
+}
+
+.grid-action-cont{
+    height: calc(100vh - 12rem);
+    position: relative;
+    overflow: scroll;
+    background-color: #d6dbe4;
+}
+
+.dummy-box{
+    height: 2rem;
+    width: 2rem;
+    background-color: black;
+    position: sticky;
+    left: 0px;
+    position: sticky;
+    left:0px;
+    top:0px;
+    z-index: 5;
+}
+
+.address-col-cont{
+    height: 2rem;
+    display: flex;
+    position: sticky;
+    top: 0px;
+}
+
+.col-name-alpha{
+    height: 2rem;
+    width: 5rem;
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgba(17, 17, 17, 0.329);
+    background-color: rgba(255, 255, 255, 0.637);
+}
+
+
+
+.cell-grid-cont{
+    position: absolute;
+    left: 2rem;
+    top: 0px;
+    
+    
+    
+}
+
+.col-cell-count{
+    height: 2rem;
+    width: 5rem;
+    border: 1px solid rgba(39, 37, 37, 0.329);
+    outline: none;
+}
+
+
+.address-row-cont{
+    /* height: 10rem; */
+    width: 2rem;
+    position: sticky;
+    left: 0px;
+    top: 2rem;
+    /* background-color: green; */
+}
+
+.row-count{
+   display: flex;
+}
+
+.rows-name-number{
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid rgba(39, 37, 37, 0.329);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+
+.sheet-action-cont{
+    height: 3rem;
+    display: flex;
+    background-color: #dcdde1;
+    gap: 1;
+}
+.sheet-add-icon > *{
+    display: inline-block;
+    margin: 0.5rem;
+    
+}
+.sheet-folder-icon{
+    height: 65%;
+    width: calc(100vw - 1rem);
+    margin-top: 0.45rem;
+    align-items: center;
+    background-color: white;
+}
+.sheet-folder-count{
+    text-decoration: underline;
+    margin-top: 0.3rem;
+}
