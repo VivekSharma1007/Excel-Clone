@@ -22,12 +22,18 @@ body{
     height: 3rem;
     background-color: #dcdde1;
 }
+
+.cellprop-action-cont > *:hover{
+    cursor: pointer;
+}
+
 .cell-action-icons{
     display: inline-block;
     margin: 0.5rem;
     padding: 0.5rem; 
     /* display: flex;
     justify-content:space-around; */
+    
   
 }
 .cell-action-icons > *{

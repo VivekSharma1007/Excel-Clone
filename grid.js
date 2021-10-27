@@ -3,7 +3,7 @@ let cols = 26;
 console.log("hello")
 let rowAddCont = document.querySelector(".address-row-cont");
 let colAddCont = document.querySelector(".address-col-cont");
-
+let gridCont = document.querySelector(".cell-grid-cont");
 let addBarElem = document.querySelector(".formula-address-bar");
 
 for(let i = 0; i < rows; i++)
@@ -24,7 +24,7 @@ for(let i = 0; i < cols; i++)
 }
 
 
-let gridCont = document.querySelector(".cell-grid-cont");
+
 for(let i = 0; i < rows; i++)
 {
     let rowCount = document.createElement("div");
@@ -34,6 +34,9 @@ for(let i = 0; i < rows; i++)
          let colCount = document.createElement("div");
          colCount.setAttribute("class", "col-cell-count");
          colCount.setAttribute("contenteditable", "true");
+         colCount.setAttribute("rid" , i);
+         colCount.setAttribute("cid" , j);
+         colCount.setAttribute("spellcheck","false");
          rowCount.appendChild(colCount);
 
          addEventListenerForAddressBar(colCount,i , j);
@@ -49,3 +52,9 @@ function addEventListenerForAddressBar(colCount, i, j)
         addBarElem.value = `${colID}${rowID}`;
     })
 }
+
+
+// by default click on first cell
+
+let firstCell = document.querySelector(".col-cell-count");
+firstCell.click();
