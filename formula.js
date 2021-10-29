@@ -8,8 +8,16 @@ for(let i = 0; i < rows; i++)  // access all cells and add event listner blur
             let [activecell, cellProp] = activeCell(address);
 
             let enteredData = activecell.innerText;
+            
+            if(enteredData === cellProp.value) return;   // if value is same don't do anything
 
             cellProp.value = enteredData;
+
+            // if the value is modifiyed: remove parent child relation, empty the formula in db and update child with new hardcoded that is modifiyed value
+            removeChildFromParent(cellProp.formula);
+            cellProp.formula = "";
+            updateChildrenCell(address);
+
             console.log(cellProp);
         }) 
     }
@@ -32,7 +40,8 @@ formulaBar.addEventListener("keydown", (e) => {
         addChildToParent(inputFormula);
 
         
-        cellUIAndCellProp(evaluatedValue, inputFormula); // to set cell and cell prop's ui
+        cellUIAndCellProp(evaluatedValue, inputFormula, address); // to set cell and cell prop's ui
+        updateChildrenCell(address);
         console.log(sheetDB);
     }
 })
@@ -72,6 +81,23 @@ function removeChildFromParent(inputFormula)
 }
 
 
+
+function updateChildrenCell(parentAddress)   // recursive function
+{
+     let [parentCell, parentCellProp] = activeCell(parentAddress);
+     let children = parentCellProp.children;
+     for(let i = 0; i < children.length; i++)
+     {
+          let childrenAddress = children[i];
+          let [childreCell, childrenCellProp] = activeCell(childrenAddress);
+          let childrenFormula = childrenCellProp.formula;
+          let evaluatedValue = evaluateFormula(childrenFormula);
+          cellUIAndCellProp(evaluatedValue, childrenFormula, childrenAddress)
+          updateChildrenCell(childrenAddress);
+     }
+}
+
+
 function evaluateFormula(inputFormula)       // decode the formula 
 {
     let encodedFormula = inputFormula.split(" ");
@@ -88,9 +114,9 @@ function evaluateFormula(inputFormula)       // decode the formula
     return eval(decodedFormula);
 }
 
-function cellUIAndCellProp(evaluatedValue, inputFormula)
+function cellUIAndCellProp(evaluatedValue, inputFormula, address)
 {
-    let address = addBarElem.value;
+    
     let [cell, cellProp] = activeCell(address);
     cell.innerText = evaluatedValue;
     cellProp.value = evaluatedValue;  // db change 

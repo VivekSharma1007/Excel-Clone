@@ -115,7 +115,7 @@ alignment.forEach((alignEle) => {           // appl;ying to all alignment class
                 break;
 
         }
-
+        
     })
 })
 
@@ -173,7 +173,9 @@ function attachPropertiesToUIAfterCellChange(cell) {         // to change the st
                 break;
 
         }
-
+        let formulaBar = document.querySelector(".formula-bar");
+        formulaBar.value = cellProp.formula;
+        cell.value = cellProp.value;
     })
 }
 
