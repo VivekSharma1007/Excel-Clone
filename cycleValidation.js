@@ -39,11 +39,11 @@ function isGraphCyclic(graphComponentMatrix)
              let response = dfsCycleDetection(graphComponentMatrix, i, j, visited, dfsVisited);
              if(response === true)
              {
-                 return true;
+                 return [i,j];
              }
         }
     }
-   return false;
+   return null;
 }
 
 /*

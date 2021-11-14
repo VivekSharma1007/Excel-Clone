@@ -24,7 +24,7 @@ for(let i = 0; i < rows; i++)  // access all cells and add event listner blur
 }
 
 let formulaBar = document.querySelector(".formula-bar");
-formulaBar.addEventListener("keydown", (e) => {
+formulaBar.addEventListener("keydown", async (e) => {
     let inputFormula = formulaBar.value;
     if(e.key === "Enter" && inputFormula)
     {
@@ -39,10 +39,17 @@ formulaBar.addEventListener("keydown", (e) => {
 
        addChildToGraphComponent(inputFormula, address);
 
-       let isCyclic = isGraphCyclic(graphComponentMatrix);
-       if(isCyclic === true)
+       let cycleResponse =   isGraphCyclic(graphComponentMatrix);
+       if(cycleResponse)
        {
-           alert("The formula entered is cyclic");
+          // alert("The formula entered is cyclic");
+          let response = confirm("Cycle is Detected in Formula. Do you want to Trace The Path"); 
+          while(response === true)
+          {
+              // keep on tracking the path until user is satisfied
+            await isGraphCyclicTracePath(graphComponentMatrix, cycleResponse);
+            response = confirm("Cycle is Detected in Formula. Do you want to Trace The Path"); 
+          }
            removeChildFromGraphComponent(inputFormula, address);
            return;
        }
