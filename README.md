@@ -10,4 +10,4 @@
 
 ## For more information click on the link below:
 
-[https://excel-clone-on-22-11-21.netlify.app/]https://excel-clone-on-22-11-21.netlify.app/
+https://excel-clone-on-22-11-21.netlify.app/
