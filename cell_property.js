@@ -209,9 +209,9 @@ function decodeRIDCIDFromAddress(address) {
 }
 
 
-const express = require("express");
-const app = express();
-let port = process.env.PORT || 3000; 
-server.listen(port,()=>{  // do not add localhost here if you are deploying it
-    console.log("server listening to port "+port);
-});
+// const express = require("express");
+// const app = express();
+// let port = process.env.PORT || 3000; 
+// server.listen(port,()=>{  // do not add localhost here if you are deploying it
+//     console.log("server listening to port "+port);
+// });
